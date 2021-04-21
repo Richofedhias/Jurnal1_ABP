@@ -22,7 +22,7 @@
 
 
             <TextView
-                android:id="@+id/tV_tittle"
+                android:id="@+id/tV_tittle_1301208552"
                 android:layout_width="60dp"
                 android:layout_height="wrap_content"
                 android:text="Tittle"
@@ -31,7 +31,7 @@
                 tools:layout_editor_absoluteY="61dp" />
 
             <TextView
-                android:id="@+id/tV_desc"
+                android:id="@+id/tV_desc_1301208552"
                 android:layout_width="80dp"
                 android:layout_height="wrap_content"
                 android:text="Description"
@@ -40,7 +40,7 @@
         </LinearLayout>
 
         <TextView
-            android:id="@+id/tV_content1"
+            android:id="@+id/tV_content1_1301208552"
             android:layout_marginLeft="10dp"
             android:layout_width="60dp"
             android:layout_height="wrap_content"
@@ -55,7 +55,7 @@
             android:background="#000000"/>
 
         <TextView
-            android:id="@+id/tV_content2"
+            android:id="@+id/tV_content2_1301208552"
             android:layout_marginLeft="10dp"
             android:layout_width="60dp"
             android:layout_height="wrap_content"
@@ -63,7 +63,7 @@
             android:layout_gravity="center"/>
 
 <ImageView
-    android:id="@+id/gambar"
+    android:id="@+id/gambar_1301208552"
     android:layout_marginLeft="5dp"
     android:layout_width="100dp"
     android:layout_height="100dp"

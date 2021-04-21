@@ -49,11 +49,11 @@ public class MobilAdapter_1301208552 extends RecyclerView.Adapter<MobilAdapter_1
 
         public myViewHolder(@NonNull View itemView) {
             super(itemView);
-            tittle = itemView.findViewById(R.id.tV_tittle);
-            desc = itemView.findViewById(R.id.tV_desc);
-            content1 = itemView.findViewById(R.id.tV_content1);
-            content2 = itemView.findViewById(R.id.tV_content2);
-            image = itemView.findViewById(R.id.gambar);
+            tittle = itemView.findViewById(R.id.tV_tittle_1301208552);
+            desc = itemView.findViewById(R.id.tV_desc_1301208552);
+            content1 = itemView.findViewById(R.id.tV_content1_1301208552);
+            content2 = itemView.findViewById(R.id.tV_content2_1301208552);
+            image = itemView.findViewById(R.id.gambar_1301208552);
 
         }
     }
