@@ -1,10 +1,12 @@
 package com.apllication.myapplication_1301208552;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -36,6 +38,18 @@ public class MobilAdapter_1301208552 extends RecyclerView.Adapter<MobilAdapter_1
         holder.content1.setText(isiMobilList.get(position).getContent1());
         holder.content2.setText(isiMobilList.get(position).getContent2());
         holder.image.setImageResource(isiMobilList.get(position).getImage());
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(view.getContext(), MainActivity2.class);
+                intent.putExtra("tittle", isiMobilList.get(position).getTittle());
+                intent.putExtra("desc", isiMobilList.get(position).getDesc());
+                intent.putExtra("content1", isiMobilList.get(position).getContent1());
+                intent.putExtra("content2", isiMobilList.get(position).getContent2());
+                intent.putExtra("image", isiMobilList.get(position).getImage());
+                context.startActivity(intent);
+            }
+        });
     }
 
     @Override
@@ -46,6 +60,7 @@ public class MobilAdapter_1301208552 extends RecyclerView.Adapter<MobilAdapter_1
     public class myViewHolder extends RecyclerView.ViewHolder {
         private TextView tittle, desc, content1, content2;
         private ImageView image;
+        private LinearLayout LL_lanjut;
 
         public myViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -54,6 +69,7 @@ public class MobilAdapter_1301208552 extends RecyclerView.Adapter<MobilAdapter_1
             content1 = itemView.findViewById(R.id.tV_content1_1301208552);
             content2 = itemView.findViewById(R.id.tV_content2_1301208552);
             image = itemView.findViewById(R.id.gambar_1301208552);
+            LL_lanjut = itemView.findViewById(R.id.LL_lanjut);
 
         }
     }
