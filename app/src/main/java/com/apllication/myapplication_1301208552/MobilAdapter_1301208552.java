@@ -1,6 +1,7 @@
 package com.apllication.myapplication_1301208552;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,8 +9,10 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
@@ -38,6 +41,54 @@ public class MobilAdapter_1301208552 extends RecyclerView.Adapter<MobilAdapter_1
         holder.content1.setText(isiMobilList.get(position).getContent1());
         holder.content2.setText(isiMobilList.get(position).getContent2());
         holder.image.setImageResource(isiMobilList.get(position).getImage());
+       holder.itemView.setOnLongClickListener(new View.OnLongClickListener() {
+           @Override
+           public boolean onLongClick(View view) {
+               AlertDialog.Builder builder = new AlertDialog.Builder(view.getContext());
+
+
+               builder.setMessage(isiMobilList.get(position).getDesc());
+
+
+               //Button One : Yes
+               builder.setPositiveButton("No", new DialogInterface.OnClickListener() {
+                   @Override
+                   public void onClick(DialogInterface dialog, int which) {
+                       dialog.cancel();
+                   }
+               });
+
+
+               //Button Two : No
+               builder.setNegativeButton("Edit", new DialogInterface.OnClickListener() {
+                   @Override
+                   public void onClick(DialogInterface dialog, int which) {
+                       Intent intent = new Intent(view.getContext(), EditActivity.class);
+                       intent.putExtra("tittle", isiMobilList.get(position).getTittle());
+                       intent.putExtra("desc", isiMobilList.get(position).getDesc());
+                       intent.putExtra("content1", isiMobilList.get(position).getContent1());
+                       intent.putExtra("content2", isiMobilList.get(position).getContent2());
+                       context.startActivity(intent);
+
+                   }
+               });
+
+
+               //Button Three : Neutral
+               builder.setNeutralButton("Detail", new DialogInterface.OnClickListener() {
+                   @Override
+                   public void onClick(DialogInterface dialog, int which) {
+                       Toast.makeText(view.getContext(), "Neutral button Clicked!", Toast.LENGTH_LONG).show();
+                       dialog.cancel();
+                   }
+               });
+
+
+               AlertDialog diag = builder.create();
+               diag.show();
+               return false;
+           }
+       });
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
